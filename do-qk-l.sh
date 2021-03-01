@@ -1,85 +1,21 @@
 #! /bin/bash
-branch="20201110/qk-l"
-BuilderKernel="clang"
+branch="20210228/qk-l"
+BuilderKernel="gcc"
+# UseOldGcc="Y"
+. main-merlin.sh 'initial' 'full'
+# export KBUILD_BUILD_VERSION=1
 
-. main.sh 'initial' 'full'
-export KBUILD_BUILD_VERSION=1
-
-spectrumFile="bego-on.rc"
+spectrumFile="none"
 TypeBuild="Stock-LMK"
-TypeBuildTag="AOSP-CFW"
+TypeBuildTag="Stable"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="begonia-cfw-qk"
-doOsdnUp=$FolderUp
+FolderUp="merlin-qk"
 doSFUp=$FolderUp
-ExFolder="L"
 PostLinkNow="Y"
 
+# kDLi='stock-memeui-clang'
 CompileKernel
 pullLmk
 CompileKernel
 pullSlmk
-CompileKernel
-
-BuilderKernel="dtc"
-TypeBuild="Stock-LMK"
-changeGcc
-changeClang
-
-CompileKernel
-pullLmk
-CompileKernel
-pullSlmk
-CompileKernel
-
-BuilderKernel="gcc"
-TypeBuild="Stock-LMK"
-changeGcc
-changeClang
-
-CompileKernel
-pullLmk
-CompileKernel
-pullSlmk
-CompileKernel
-
-branch="20210205/qk-l"
-BuilderKernel="clang"
-FolderUp="begonia-memeui-qk"
-doOsdnUp=$FolderUp
-doSFUp=$FolderUp
-ExFolder="L"
-ChangeBranch
-TypeBuildTag="NON-CFW"
-changeGcc
-changeClang
-TypeBuild="Stock-LMK"
-
-
-CompileKernel
-pullLmkB
-CompileKernel
-pullSlmkB
-CompileKernel
-
-BuilderKernel="dtc"
-TypeBuild="Stock-LMK"
-changeGcc
-changeClang
-
-CompileKernel
-pullLmkB
-CompileKernel
-pullSlmkB
-CompileKernel
-
-BuilderKernel="gcc"
-TypeBuild="Stock-LMK"
-changeGcc
-changeClang
-
-CompileKernel
-pullLmkB
-CompileKernel
-pullSlmkB
 CompileKernel

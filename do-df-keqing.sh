@@ -1,80 +1,19 @@
 #! /bin/bash
-branch="20210205/neutrino-5"
-BuilderKernel="clang"
+branch="20210228/neutrino-1"
+BuilderKernel="dtc"
+# UseOldGcc="Y"
+. main-merlin.sh 'initial' 'full'
+# export KBUILD_BUILD_VERSION=1
 
-. main.sh 'initial' 'full'
-export KBUILD_BUILD_VERSION=9
-
-spectrumFile="bego-on-p.rc"
+spectrumFile="none"
 TypeBuild="Stock-LMK"
-TypeBuildTag="NON-CFW"
+TypeBuildTag="Stable"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="begonia-memeui-neutrino"
+FolderUp="merlin-neutrino"
 doSFUp=$FolderUp
 PostLinkNow="Y"
-ExFolder="HY"
 
-# CompileKernel
-# pullLmkB
-# CompileKernel
-# pullSlmkB
-# CompileKernel
-
-# BuilderKernel="dtc"
-# TypeBuild="Stock-LMK"
-# changeGcc
-# changeClang
-# ChangeBranch
-
-# CompileKernel
-# pullLmkB
-# CompileKernel
-# pullSlmkB
-# CompileKernel
-
-# BuilderKernel="gcc"
-# TypeBuild="Stock-LMK"
-# changeGcc
-# changeClang
-# ChangeBranch
-
-# CompileKernel
-# pullLmkB
-# CompileKernel
-pullSlmkB
-CompileKernel
-
-branch="20201110/neutrino-5"
-TypeBuild="Stock-LMK"
-TypeBuildTag="AOSP-CFW"
-FolderUp="begonia-cfw-neutrino"
-doSFUp=$FolderUp
-ChangeBranch
-
-CompileKernel
-pullLmk
-CompileKernel
-pullSlmk
-CompileKernel
-
-BuilderKernel="dtc"
-TypeBuild="Stock-LMK"
-changeGcc
-changeClang
-ChangeBranch
-
-CompileKernel
-pullLmk
-CompileKernel
-pullSlmk
-CompileKernel
-
-BuilderKernel="gcc"
-TypeBuild="Stock-LMK"
-changeGcc
-changeClang
-ChangeBranch
-
+# kDLi='stock-memeui-clang'
 CompileKernel
 pullLmk
 CompileKernel
