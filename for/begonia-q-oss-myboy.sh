@@ -11,13 +11,13 @@ TypeBuildTag="[Q-OSS][Stock-LMK]"
 
 CloneKernel
 CloneCompiledGccEleven
-CloneThirteenGugelClang
+# CloneThirteenGugelClang
 # CloneGCCOld
 # CloneOldDTCClang
 # PullLtoSlmk
 # CompileClangKernel && CleanOut
 # CloneProtonClang
-CompileClangKernel && CleanOut
+# CompileClangKernel && CleanOut
 CloneDTCClang
 # PullSlmk
 CompileGccKernel && CleanOut
